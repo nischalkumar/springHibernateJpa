@@ -21,4 +21,10 @@ public class FriendService {
         Optional<User> entity2 = userRepository.findById(user2);
         return friendRepository.save(new Friend(null, entity1.get(), entity2.get()));
     }
+
+    public Friend randomFriend() {
+        User user1= new User(null,"lala","fafa@gmail.com");
+        User user2= new User(null,"papa","papa@gmail.com");
+        return friendRepository.save(new Friend(null, user1, user2));
+    }
 }

@@ -19,4 +19,9 @@ public class FriendController {
     public Friend saveFriend(@RequestParam("user1") Integer user1, @RequestParam("user2")Integer user2) {
         return friendService.saveFriend(user1, user2);
     }
+
+    @PostMapping("/random")
+    public Friend randomFriend() {
+        return friendService.randomFriend();
+    }
 }
