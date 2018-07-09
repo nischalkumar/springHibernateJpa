@@ -1,6 +1,8 @@
 package com.foo.hibernateJpa.repository;
 
 import com.foo.hibernateJpa.domain.User;
+import org.hibernate.Session;
+import org.springframework.data.jpa.provider.HibernateUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
