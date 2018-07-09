@@ -24,5 +24,10 @@ public class UserController {
         // This returns a JSON or XML with the users
         return userService.findAll();
     }
+
+    @GetMapping(path = "/{name}")
+    public @ResponseBody User getUserByName(@PathVariable("name") String name) {
+        return userService.findByName(name);
+    }
 }
 

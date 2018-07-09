@@ -17,4 +17,9 @@ public class UserService {
     public Iterable<User> findAll() {
         return userRepository.findAll();
     }
+
+    public User findByName(String name) {
+        User user =  userRepository.findUserByName(name);
+        return user;
+    }
 }
