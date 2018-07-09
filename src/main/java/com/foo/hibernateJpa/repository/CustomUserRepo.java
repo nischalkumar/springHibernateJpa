@@ -23,7 +23,7 @@ public class CustomUserRepo {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<User> criteria = criteriaBuilder.createQuery(User.class);
         Root<User> root = criteria.from(User.class);
-        criteria.where(criteriaBuilder.like(root.get("name"), name));
+        criteria.where(criteriaBuilder.equal(root.get("name"), name));
         return session.createQuery(criteria).getResultList();
     }
 }

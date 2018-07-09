@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 @Controller
 @RequestMapping(path="/v1/user")
 public class UserController {
@@ -26,6 +28,7 @@ public class UserController {
     }
 
     @GetMapping(path = "/{name}")
+    @Transactional
     public @ResponseBody User getUserByName(@PathVariable("name") String name) {
         return userService.findByName(name);
     }
