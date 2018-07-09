@@ -29,5 +29,10 @@ public class UserController {
     public @ResponseBody User getUserByName(@PathVariable("name") String name) {
         return userService.findByName(name);
     }
+
+    @GetMapping(path = "/email/{email}")
+    public @ResponseBody User getUserByEmail(@PathVariable("email") String email) {
+        return userService.findUserByEmail(email);
+    }
 }
 
